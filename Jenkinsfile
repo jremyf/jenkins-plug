@@ -22,6 +22,7 @@ node {
 	            sh """
 			. venv/bin/activate
 			python venv/bin/pytest /test
+			"""
 	        },
 	        'integration': {
 	            sh "echo 'shell scripts to run integration tests...'"
