@@ -3,4 +3,10 @@
 from expiringdict import ExpiringDict
 import six
 
-print("ok wearehere")
+class Main:
+
+	def __init__(self, toprint):
+		self.value=toprint
+
+	def sprint(self):
+		return self.value

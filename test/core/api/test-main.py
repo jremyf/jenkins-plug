@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from main.core.api.main import Main
+
 def test_main():
-	print("ok bim")
+	m = Main("handled")
+	print(m.sprint())
+	
