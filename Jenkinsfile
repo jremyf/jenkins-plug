@@ -7,7 +7,12 @@ node {
         	checkout scm
         }
         stage ('Build') {
-        	sh "echo 'shell scripts to build project...'"
+        	sh """
+			virtualenv venv
+			virtualenv --relocatable venv 
+			pip install -r ./requirements.txt
+			pip install -e .
+			"""
         }
         stage ('Tests') {
 	        parallel 'static': {
