@@ -19,7 +19,9 @@ node {
 	            sh "echo 'shell scripts to run static tests...'"
 	        },
 	        'unit': {
-	            sh "echo 'shell scripts to run unit tests...'"
+	            sh """
+			. venv/bin/activate
+			python venv/bin/pytest /test
 	        },
 	        'integration': {
 	            sh "echo 'shell scripts to run integration tests...'"
