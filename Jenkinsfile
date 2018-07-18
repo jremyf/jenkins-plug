@@ -19,7 +19,7 @@ node {
 			. venv/bin/activate
 			pip install -r ./requirements.txt
 			pip install -e .
-			python venv/bin/pytest /test
+			python venv/bin/pytest ./test/
 			"""
         }
       	stage ('Deploy') {
