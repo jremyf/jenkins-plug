@@ -23,7 +23,7 @@ node {
 			. venv/bin/activate
 			pwd
 			ls
-			python ${VIRTUAL_ENV}/bin/pytest /test
+			python ${env.VIRTUAL_ENV}/bin/pytest /test
 			"""
 	        },
 	        'integration': {
