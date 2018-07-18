@@ -15,20 +15,12 @@ node {
 			"""
         }
         stage ('Tests') {
-	        parallel 'static': {
-	            sh "echo 'shell scripts to run static tests...'"
-	        },
-	        'unit': {
-	            sh """
+	        sh """
 			. venv/bin/activate
-			pwd
-			ls
-			python ${env.VIRTUAL_ENV}/bin/pytest /test
+			pip install -r ./requirements.txt
+			pip install -e .
+			python venv/bin/pytest /test
 			"""
-	        },
-	        'integration': {
-	            sh "echo 'shell scripts to run integration tests...'"
-	        }
         }
       	stage ('Deploy') {
             sh "echo 'shell scripts to deploy to server...'"
