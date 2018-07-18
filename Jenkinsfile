@@ -21,7 +21,9 @@ node {
 	        'unit': {
 	            sh """
 			. venv/bin/activate
-			python venv/bin/pytest /test
+			pwd
+			ls
+			python ${VIRTUAL_ENV}/bin/pytest /test
 			"""
 	        },
 	        'integration': {
