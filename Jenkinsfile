@@ -1,10 +1,16 @@
 pipeline {
-    agent { docker { image 'python:3.5.1' } }
-    stages {
-        stage('build') {
-            steps {
-                sh 'python --version'
-            }
-        }
+    agent {
+    node {
+        label 'my-defined-label'
+        customWorkspace '/some/other/path'
+	stages {
+		stage('build') {
+		    steps {
+		        sh 'python --version'
+		    }
+		}
+	    }
     }
+}
+    
 }
